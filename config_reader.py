@@ -11,7 +11,8 @@ class Settings(BaseSettings):
     DB_NAME: str
 
     API_TOKEN: str
-
+    GROUP_ID: str
+    
 # postgresql+asyncpg://postgres:qwerty47@localhost/notdb
 
     @property
