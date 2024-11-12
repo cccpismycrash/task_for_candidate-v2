@@ -6,8 +6,6 @@ from config_reader import config
 
 engine = create_async_engine(url=config.DATABASE_URL, echo=True)
 
-# postgresql+asyncpg://postgres:qwerty47@localhost/notdb
-
 async_session = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
 
 async def init_models():
