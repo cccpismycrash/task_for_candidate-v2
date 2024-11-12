@@ -9,7 +9,7 @@ from processing import make_pic
 from database.models import add_column
 from database.models import init_models
 
-TEST_GROUP_ID = '@teatingforbor'
+TEST_GROUP_ID = config.GROUP_ID
 
 logging.basicConfig(level=logging.INFO)
 
