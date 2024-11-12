@@ -8,12 +8,6 @@ engine = create_async_engine(url=config.DATABASE_URL, echo=True)
 
 async_session = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
 
-async def init_models():
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata)
-        await conn.run_sync(Base.metadata.create_all)
-
-
 async def add_column(act_time: str, text: str, value: float):
     async with async_session.begin() as session:
         new_row = Notification(time=act_time, post_text=text,value_share=value)
